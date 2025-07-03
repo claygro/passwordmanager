@@ -41,7 +41,7 @@ const AddPassword = () => {
   return (
     <>
       <ToastContainer />
-      <div className="px-30 pt-20">
+      <div className="container-body pt-20">
         <form onSubmit={handleSubmit}>
           <div className="bg-white py-2 px-5 rounded-2xl border-2 border-green-700">
             <input

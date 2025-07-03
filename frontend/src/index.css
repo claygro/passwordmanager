@@ -10,6 +10,14 @@ html {
 body {
   background-color: rgb(197, 223, 197);
 }
-.container {
+.container-body {
   padding-inline: 100px;
+}
+@media (max-width: 500px) {
+  .container-body {
+    padding-inline: 30px;
+  }
+  input {
+    font-size: 14px;
+  }
 }
