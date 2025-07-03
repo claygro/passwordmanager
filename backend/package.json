@@ -1,0 +1,28 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/mongoose": "^5.11.96",
+    "@types/mysql": "^2.15.27",
+    "cors": "^2.8.5",
+    "dotenv": "^17.0.1",
+    "express": "^5.1.0",
+    "mongodb": "^6.17.0",
+    "mongoose": "^8.16.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/nodemon": "^1.19.6",
+    "@types/sequelize": "^4.28.20",
+    "nodemon": "^3.1.10"
+  }
+}

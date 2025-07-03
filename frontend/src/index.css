@@ -1,0 +1,15 @@
+@import "tailwindcss";
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+* {
+  font-family: Poppins;
+}
+body {
+  background-color: rgb(197, 223, 197);
+}
+.container {
+  padding-inline: 100px;
+}
