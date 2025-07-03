@@ -9,8 +9,8 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<AddPassword />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/passwordmanager/" element={<AddPassword />} />
+          <Route path="/passwordmanager/about" element={<About />} />
         </Routes>
       </Router>
     </>
