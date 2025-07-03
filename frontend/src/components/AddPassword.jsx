@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ApiConnection from "../config/Api.config";
 import ShowPassword from "./ShowPassword";
 import { GoEyeClosed } from "react-icons/go";
@@ -8,17 +8,27 @@ import { ToastContainer, toast } from "react-toastify";
 const AddPassword = () => {
   const [data, setData] = useState({});
   const [visiblePassword, setVisiblePassword] = useState(false);
+  const [showContent, setShowContent] = useState([]);
 
+  useEffect(() => {
+    async function getPassword() {
+      const response = await ApiConnection.get("/password");
+      setShowContent(response.data);
+    }
+    getPassword();
+  }, []);
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    ApiConnection.post("/password/add", {
+    const res = await ApiConnection.post("/password/add", {
       ...data,
     });
+    console.log(res);
+    setShowContent((prev) => [...prev, res.data.response]);
     e.target.reset();
     toast("Successfully added");
   };
@@ -88,7 +98,10 @@ const AddPassword = () => {
           </div>
         </form>
 
-        <ShowPassword />
+        <ShowPassword
+          showContent={showContent}
+          setShowContent={setShowContent}
+        />
       </div>
     </>
   );

@@ -1,23 +1,14 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ApiConnection from "../config/Api.config";
 import { GoEyeClosed } from "react-icons/go";
 import { RxEyeOpen } from "react-icons/rx";
 import { FaRegCopy } from "react-icons/fa6";
 import { ToastContainer, toast } from "react-toastify";
 
-const ShowPassword = () => {
-  const [showContent, setShowContent] = useState([]);
+const ShowPassword = ({ showContent, setShowContent }) => {
   const [defaultPassword, setDefaultPassword] = useState("...........");
   const [visibility, setVisibility] = useState(false);
   const [visibleId, setVisibleId] = useState(null);
-
-  useEffect(() => {
-    async function getPassword() {
-      const response = await ApiConnection.get("/password");
-      setShowContent(response.data);
-    }
-    getPassword();
-  }, [showContent]);
 
   const handleDelete = (_id) => {
     const newList = showContent.filter((item) => item._id !== _id);

@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-
 const Navbar = () => {
   return (
     <nav className="bg-green-900 text-white px-6 py-4 sticky top-0  shadow-md">
