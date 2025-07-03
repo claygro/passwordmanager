@@ -15,7 +15,7 @@ const Navbar = () => {
         {/* Links (visible on medium and larger screens) */}
         <div className=" flex space-x-6">
           <NavLink
-            to="/passwordmanager/"
+            to="/"
             className={({ isActive }) =>
               `hover:text-yellow-300 transition duration-200 ${
                 isActive ? "text-yellow-300" : ""
@@ -25,7 +25,7 @@ const Navbar = () => {
             Home
           </NavLink>
           <NavLink
-            to="/passwordmanager//about"
+            to="/about"
             className={({ isActive }) =>
               `hover:text-yellow-300 transition duration-200 ${
                 isActive ? "text-yellow-300" : ""
